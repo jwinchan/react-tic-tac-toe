@@ -74,22 +74,23 @@ const App = () => {
     //    3 squares in the same row match
     //    i.e. same value
     for (const row of squares) {
-      if (row[0].value===row[1].value===row[2].value){
+      if (row[0].value===row[1].value && row[2].value === row[0].value && row[0].value !== ''){
       
         setWinner(row[0].value);
       }
     }
     // 2. Go down each column to see if
     //    3 squares in each column match
-    if (squares[0][0].value===squares[1][0].value===squares[2][0].value){
+    if (squares[0][0].value===squares[1][0].value && squares[2][0].value === squares[0][0].value && squares[0][0].value !== ''){
       
       setWinner(squares[0][0].value);
+    
     }
-    if (squares[0][1].value===squares[1][1].value===squares[2][1].value){
+    if (squares[0][1].value===squares[1][1].value && squares[2][1].value === squares[0][1].value && squares[0][1].value !== '' ){
       
       setWinner(squares[0][1].value);
     }
-    if (squares[0][2].value===squares[1][2].value===squares[2][2].value){
+    if (squares[0][2].value===squares[1][2].value && squares[2][2].value === squares[0][2].value && squares[0][2].value !== ''){
       
       setWinner(squares[0][2].value);
     }
@@ -97,15 +98,15 @@ const App = () => {
     // 3. Go across each diagonal to see if 
     //    all three squares have the same value.
 
-    if (squares[0][0].value===squares[1][1].value===squares[2][2].value){
+    if (squares[0][0].value===squares[1][1].value && squares[2][2].value === squares[0][0].value && squares[0][0].value !== ''){
       
       setWinner(squares[0][0].value);
     }
-    if (squares[0][2].value===squares[1][1].value===squares[2][0].value){
+    if (squares[0][2].value===squares[1][1].value && squares[2][0].value === squares[0][2].value && squares[0][2].value !== ''){
       
       setWinner(squares[0][2].value);
     }
-  }
+  } 
 
   // const resetGame = () => {
     // Complete in Wave 4
