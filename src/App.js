@@ -45,7 +45,7 @@ const App = () => {
       const newRow = [];
       newSquares.push(newRow);
       for (const square of row) {
-        if (square.id === updatedSquare.id) {
+        if (square.id === updatedSquare.id && square.value === '') {
           newRow.push({id: square.id, value: player});
         } else {
           newRow.push(square);
