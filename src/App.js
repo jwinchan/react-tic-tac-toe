@@ -38,28 +38,29 @@ const App = () => {
   //   Then pass it into the squares as a callback
 
   const updateSquares = (updatedSquare) => {
+    
     const newSquares = [];
 
-    for (const row in squares) {
-      newSquares.push([]);
-      for (const col in row) {
-        if (col.id === updatedSquare.id) {
-          newSquares[row].push(updatedSquare);
+    for (const row of squares) {
+      const newRow = [];
+      newSquares.push(newRow);
+      for (const square of row) {
+        if (square.id === updatedSquare.id) {
+          newRow.push({id: square.id, value: player});
         } else {
-          newSquares[row].push(col);
+          newRow.push(square);
         }
       }
     }
 
     console.log(newSquares);
-
-
+    
     setSquares(newSquares);
-    // if (player === PLAYER_1) {
-    //   setPlayer(PLAYER_2)
-    // } else {
-    //   setPlayer(PLAYER_1);
-    // }
+    if (player === PLAYER_1) {
+      setPlayer(PLAYER_2);
+    } else {
+      setPlayer(PLAYER_1);
+    }
   }
 
 
