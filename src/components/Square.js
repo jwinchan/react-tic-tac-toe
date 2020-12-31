@@ -8,7 +8,7 @@ const Square = (props) => {
   const onButtonClick = () => {
     const updatedSquare = {
       id: props.id,
-      value: 'X',
+      // value: 'X',
       }
   
     props.onClickCallback(updatedSquare);
